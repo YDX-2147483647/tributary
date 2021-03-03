@@ -1,0 +1,80 @@
+body {
+    margin: 1em;
+}
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: black;
+        --dark-mode-white: #eee;
+        color: var(--dark-mode-white);
+    }
+}
+
+kbd {
+    /* MDN */
+    background: linear-gradient(180deg ,#eee, #fff);
+    background-color: #eee;
+    border: 1px solid #cdd5d7;
+    border-radius: 6px;
+    box-shadow: 0 1px 2px 1px #cdd5d7;
+    font-family: consolas, "Liberation Mono", courier, monospace;
+    font-size: .9rem;
+    font-weight: 700;
+    line-height: 1;
+    margin: 3px;
+    padding: 4px 6px;
+    white-space: nowrap;
+}
+@media (prefers-color-scheme: dark) {
+    kbd {
+        background: linear-gradient(180deg , #111, #000);
+        background-color: #111;
+    }
+}
+
+
+#problem-set {
+    list-style: lower-greek;
+}
+
+#problem-set li {
+    margin: 0.5em;
+}
+
+#problem-set li label span {
+    white-space: pre-wrap;
+    font-family: Consolas, monospace;
+}
+#problem-set li label span::after {
+    content: " → ";
+}
+
+#problem-set li.right::after {
+    content: "✓";
+    color: lightgreen;
+    font-size: 90%;
+}
+
+#problem-set li.wrong {
+    color: red;
+}
+#problem-set li.wrong input {
+    color: red
+}
+#problem-set li.wrong::after {
+    content: "✗";
+    color: red;
+    font-size: 90%;
+}
+
+#problem-set input::-webkit-outer-spin-button, #problem-set input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+#problem-set input[type="number"] {
+    -moz-appearance: textfield;
+}
+@media (prefers-color-scheme: dark) {
+    input {
+        background-color: rgb(59, 59, 59);
+        color: var(--dark-mode-white);
+    }
+}

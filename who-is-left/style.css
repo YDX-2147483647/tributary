@@ -1,0 +1,33 @@
+ul#counts {
+    list-style-type: none;
+    display: flex;
+    flex: 1;
+    padding-left: 0;
+    flex-wrap: wrap;
+}
+
+ul#counts > li {
+    margin: 0.5em;
+}
+ul#counts > li > button {
+    padding: 0.5em;
+    border: none;
+    border-radius: 0.3em;
+    min-width: 4em;
+
+    display: grid;
+    place-items: center;
+}
+ul#counts > li > button:hover,
+ul#counts > li > button:focus {
+    filter: hue-rotate(-30deg);
+}
+ul#counts > li > button:active {
+    filter: hue-rotate(120deg);
+}
+ul#counts > li > button[data-count="0"] {
+    background-color: #ff646422;
+}
+ul#counts > li > button:not([data-count="0"]) {
+    background-color: #c8fc7a22;
+}

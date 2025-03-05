@@ -75,6 +75,9 @@ function format_date(date: Date): string {
             </label>
           </form>
         </li>
+        <li>
+          <p>数据安全：打开网页只是下载了程序，程序在你本地的浏览器运行，数据并未离开你的计算机。事实上，网页完成加载后，你可以直接断开互联网，然后再操作数据。</p>
+        </li>
       </ul>
     </section>
   </main>

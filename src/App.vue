@@ -55,9 +55,9 @@ function format_date(date: Date): string {
       </label>
     </form>
 
-    <h2>“学生排班表”</h2>
+    <h2>复制“学生排班表”</h2>
     <p>
-      统计范围：{{ format_date(date_range[0]) }}（含）至{{ format_date(date_range[1]) }}（含）。
+      范围：{{ format_date(date_range[0]) }}（含）至{{ format_date(date_range[1]) }}（含）。
     </p>
     <textarea>{{ result }}</textarea>
 

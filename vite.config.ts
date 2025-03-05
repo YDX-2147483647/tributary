@@ -15,4 +15,6 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
+  // https://vite.dev/guide/static-deploy.html#github-pages
+  base: '/tributary/',
 })

@@ -16,5 +16,5 @@ export default defineConfig({
     },
   },
   // https://vite.dev/guide/static-deploy.html#github-pages
-  base: '/tributary/',
+  base: '/tributary/schedule/',
 })

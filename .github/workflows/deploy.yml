@@ -29,12 +29,16 @@ jobs:
         with:
           node-version: 20
           cache: pnpm
-      - run: pnpm install
-      - run: pnpm build
+          cache-dependency-path: |
+            schedule/pnpm-lock.yaml
+
+      - run: pnpm --dir schedule install
+      - run: pnpm --dir schedule build --outDir ../out/schedule --emptyOutDir
+
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist
+          path: ./out
 
   deploy:
     environment:

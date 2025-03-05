@@ -43,14 +43,6 @@ function format_date(date: Date): string {
         <textarea id="schedule" v-model="schedule" required :placeholder="example_schedule"></textarea>
       </label>
 
-
-      <section>
-        <label for="date">
-          以防万一，你可以手动设置<a href="https://jwb.bit.edu.cn/jxrlsksj/2b85d60cc8fc4ccea17f5c86c01fffb3.htm">教学日历</a>第一周的周一：
-          <input type="date" id="date" v-model="first_date" required />
-        </label>
-      </section>
-
       <label for="month">
         <h2>选择月份</h2>
         <select id="month" required v-model="month">
@@ -68,6 +60,23 @@ function format_date(date: Date): string {
       统计范围：{{ format_date(date_range[0]) }}（含）至{{ format_date(date_range[1]) }}（含）。
     </p>
     <textarea>{{ result }}</textarea>
+
+    <section>
+      <h2>补充</h2>
+      <ul>
+        <li>
+          <p>已知的问题：没有考虑“放假或者法节”。</p>
+        </li>
+        <li>
+          <form>
+            <label for="date">
+              以防万一，你可以手动设置<a href="https://jwb.bit.edu.cn/jxrlsksj/2b85d60cc8fc4ccea17f5c86c01fffb3.htm">教学日历</a>第一周的周一：
+              <input type="date" id="date" v-model="first_date" required />
+            </label>
+          </form>
+        </li>
+      </ul>
+    </section>
   </main>
 </template>
 

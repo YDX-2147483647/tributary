@@ -17,9 +17,12 @@ export function transform(date_range: [Date, Date], schedule: string, first_date
     const records = schedule.split('\n').filter(row => row != '').filter(row => row != '上课周次	上课星期	开始节次	结束节次').map(parse_row)
 
     const decisions: Decision[] = []
-    for (let d = date_range[0]; d <=date_range[1]; d.setDate(d.getDate() + 1)) {
+    // Copy the date is necessary
+    for (let d = new Date(date_range[0]); d <= date_range[1]; d.setDate(d.getDate() + 1)) {
         decisions.push(decide(d, records, first_date))
     }
+
+    console.log(decisions)
 
     return decisions.join('\t')
 }

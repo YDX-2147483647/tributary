@@ -32,8 +32,6 @@ export function transform(
     decisions.push(decide(d, records, first_date))
   }
 
-  console.log(decisions)
-
   return decisions.join('\t')
 }
 

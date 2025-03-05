@@ -13,7 +13,10 @@ const schedule = ref('')
 const month = ref(2)
 const date_range = computed<[Date, Date]>(() => [new Date(2025, month.value - 1, 26), new Date(2025, month.value, 25)])
 
-const result = computed(() => transform(date_range.value, schedule.value, new Date(first_date.value)))
+const result = computed(() => transform(
+  date_range.value, schedule.value,
+  // Use local time zone. Otherwise, it would be the UTC midnight.
+  new Date(first_date.value + 'T00:00')))
 
 function format_date(date: Date): string {
   const year = date.getFullYear()

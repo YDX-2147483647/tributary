@@ -54,6 +54,7 @@ function format_date(date: Date): string {
           <option :value="4">四月</option>
           <option :value="5">五月</option>
           <option :value="6">六月</option>
+          <option :value="7">七月</option>
         </select>
       </label>
     </form>
